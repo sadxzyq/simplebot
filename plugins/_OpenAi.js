@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
 let handler = async (m, { conn, text }) => {
-if (!text) throw "[!] Masukkan teks/pertanyaan"
+if (!text) throw "[!] Masukkan teks."
 const configuration = new Configuration({
     apiKey: "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"
 });
