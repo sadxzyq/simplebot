@@ -1,5 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
-let setting = from "./key.json";
+import setting from "../key.json";
 
 let handler = async (m, { conn, text }) => {
 if (!text) throw "[!] Masukkan teks untuk memuat gambar"
