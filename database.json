@@ -7300,7 +7300,7 @@
       "roboxp": 0
     },
     "6282285357346@s.whatsapp.net": {
-      "exp": 715,
+      "exp": 939,
       "limit": 100,
       "lastclaim": 0,
       "registered": false,
@@ -7850,10 +7850,10 @@
       "lastSuccess": 1674991151962
     },
     "main-menu-1.js": {
-      "total": 30,
-      "success": 28,
-      "last": 1677535474511,
-      "lastSuccess": 1677535474511
+      "total": 32,
+      "success": 30,
+      "last": 1677544479673,
+      "lastSuccess": 1677544479673
     },
     "exp-daftar.js": {
       "total": 2,
@@ -7868,10 +7868,10 @@
       "lastSuccess": 1677534553918
     },
     "main-menulist.js": {
-      "total": 30,
-      "success": 24,
-      "last": 1677534705377,
-      "lastSuccess": 1677534705377
+      "total": 31,
+      "success": 25,
+      "last": 1677544628773,
+      "lastSuccess": 1677544628773
     },
     "downloader-tiktokmp4.js": {
       "total": 2,
@@ -7976,16 +7976,22 @@
       "lastSuccess": 0
     },
     "info-dark_bot.js": {
-      "total": 2,
-      "success": 2,
-      "last": 1677534635600,
-      "lastSuccess": 1677534635600
+      "total": 4,
+      "success": 4,
+      "last": 1677544314205,
+      "lastSuccess": 1677544314205
     },
     "info-totalfitur.js": {
       "total": 2,
       "success": 2,
       "last": 1677535447252,
       "lastSuccess": 1677535447252
+    },
+    "sc_dark.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1677544294307,
+      "lastSuccess": 1677544294307
     }
   },
   "msgs": {},

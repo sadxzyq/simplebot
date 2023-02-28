@@ -243,40 +243,40 @@ const sections = [
       ]},{
     title: `${htki} 𝗠𝗔𝗜𝗡 ${htka}`,
     rows: [
-        {title: `${emot} ${pmenus} SPEED BOT`, rowId: ".speed", description: "Menampilkan kecepatan respon BOT"},
-        {title: `${emot} ${pmenus} OWNER BOT`, rowId: ".owner", description: "Menampilkan List owner BOT"},
-        {title: `${emot} ${pmenus} RUNTIME BOT`, rowId: ".runtime", description: "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 Waktu Bot Berjalan"}, 
-        {title: `${emot} ${pmenus} SCRIPT BOT`, rowId: ".sc", description: `Source Code ${namebot}`},
+        {title: `${pmenus} SPEED BOT`, rowId: ".speed", description: "Menampilkan kecepatan respon BOT"},
+        {title: `${pmenus} OWNER BOT`, rowId: ".owner", description: "Menampilkan List owner BOT"},
+        {title: `${pmenus} RUNTIME BOT`, rowId: ".runtime", description: "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 Waktu Bot Berjalan"}, 
+        {title: `${pmenus} SCRIPT BOT`, rowId: ".sc", description: `Source Code ${namebot}`},
     ]
       },{
           title: `${htki} 𝗠𝗲𝗻𝘂 𝗠𝗲𝗻𝗳𝗲𝘀𝘀${htka}`,
           rows: [
-            {title: `${emot} ${pmenus} Menfess Balas`, rowId: ".? menbalas", description: "Menampilkan Semua command BOT"},
+            {title: ` ${pmenus} Menfess Balas`, rowId: ".? menbalas", description: "Menampilkan Semua command BOT"},
           ]},{
         title: `${htki} 𝗠𝗘𝗡𝗨 ${htka}`,
         rows: [
-            {title: `${emot} ${pmenus} 𝙰𝙻𝙻 *MENU*`, rowId: ".? all", description: "Menampilkan Semua command BOT"},
-        {title: `${emot} ${pmenus} 𝚁𝙿𝙶`, rowId: ".? rpg", description: "Game Epic Rpg!"},
-        {title: `${emot} ${pmenus} 𝙴𝚇𝙿`, rowId: ".? xp", description: "Ayo tingkatkan pangkat mu!"},
-        {title: `${emot} ${pmenus} 𝙶𝙰𝙼𝙴`, rowId: ".? game", description: "Gamenya seru seru lho >-<"},
-        {title: `${emot} ${pmenus} 𝙵𝚄𝙽`, rowId: ".? fun", description: "Fitur yang aman untuk keluarga"},
-        {title: `${emot} ${pmenus} 𝙺𝙴𝚁𝙰𝙽𝙶`, rowId: ".? kerangajaib", description: "Tanyakan pada ketua club"},
-        {title: `${emot} ${pmenus} 𝚀𝚄𝙾𝚃𝙴𝚂`, rowId: ".? quotes", description: "Random Inspirasi"},         
-        {title: `${emot} ${pmenus} 𝙿𝚁𝙴𝙼𝙸𝚄𝙼`, rowId: ".? premium", description: "Only premium Users"},
-        {title: `${emot} ${pmenus} 𝚊𝚕-𝚚𝚞𝚛𝚊𝚗`, rowId: ".? quran", description: "Tobat yuk kak"},
+            {title: `${pmenus} 𝙰𝙻𝙻 *MENU*`, rowId: ".? all", description: "Menampilkan Semua command BOT"},
+        {title: `${pmenus} 𝚁𝙿𝙶`, rowId: ".? rpg", description: "Game Epic Rpg!"},
+        {title: `${pmenus} 𝙴𝚇𝙿`, rowId: ".? xp", description: "Ayo tingkatkan pangkat mu!"},
+        {title: `${pmenus} 𝙶𝙰𝙼𝙴`, rowId: ".? game", description: "Gamenya seru seru lho >-<"},
+        {title: `${pmenus} 𝙵𝚄𝙽`, rowId: ".? fun", description: "Fitur yang aman untuk keluarga"},
+        {title: `${pmenus} 𝙺𝙴𝚁𝙰𝙽𝙶`, rowId: ".? kerangajaib", description: "Tanyakan pada ketua club"},
+        {title: `${pmenus} 𝚀𝚄𝙾𝚃𝙴𝚂`, rowId: ".? quotes", description: "Random Inspirasi"},         
+        {title: ` ${pmenus} 𝙿𝚁𝙴𝙼𝙸𝚄𝙼`, rowId: ".? premium", description: "Only premium Users"},
+        {title: ` ${pmenus} 𝚊𝚕-𝚚𝚞𝚛𝚊𝚗`, rowId: ".? quran", description: "Tobat yuk kak"},
         {title: `۩  ${pmenus} 𝙸𝚂𝙻𝙰𝙼`, rowId: ".? islam", description: "Masya Allah Kita bangga menjadi umat muslim :)"},
-        {title: `${emot} ${pmenus} 𝙸𝙽𝚃𝙴𝚁𝙽𝙴𝚃`, rowId: ".? internet", description: "Cari sesuatu diBOT"},
-        {title: `${emot} ${pmenus} 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁𝚂`, rowId: ".? downloader", description: "Download sesuatu diBOT"},
-        {title: `${emot} ${pmenus} 𝚂𝚃𝙸𝙺𝙴𝚁𝚂`, rowId: ".? stiker", description: "Buat Sticker diBOT"},
-        {title: `${emot} ${pmenus} 𝙽𝚄𝙻𝙸𝚂`, rowId: ".? nulis", description: "Nulis kok males kak?"},
-        {title: `${emot} ${pmenus} 𝙿𝚁𝙴𝚂𝙴𝚃 𝙰𝙻𝙸𝙶𝙷𝚃 𝙼𝙾𝚃𝙸𝙾𝙽/APK`, rowId: ".presetmenu", description: "Gunakan Preset Bot buat Alight Montion Mu"},                               
-        {title: `${emot} ${pmenus} 𝙰𝚄𝙳𝙸𝙾`, rowId: ".? audio", description: "Ubah Audio dengan Filter"},
-        {title: `${emot} ${pmenus} 𝚜𝚘𝚞𝚗𝚍 𝚡 𝚖𝚊𝚗𝚐𝚔𝚊𝚗𝚎 𝚖𝚎𝚗𝚞`, rowId: ".soundmenu", description: "Kumpulan 99+ Sound"},
-        {title: ${emot}🏢 ${pmenus} 𝙶𝚁𝙾𝚄𝙿`, rowId: ".? group", description: "Only Groups"},
-        {title: `${emot} ${pmenus} 𝙰𝙳𝙼𝙸𝙽`, rowId: ".? admin", description: "Only Admin Group"},
-        {title: `${emot} ${pmenus} 𝚃𝙾𝙾𝙻𝚂`, rowId: ".? tools", description: "Mungkin tools ini bisa membantu?"},       
-        {title: `${emot} ${pmenus} 𝙸𝙽𝙵𝙾`, rowId: ".? info", description: "Info info BOT"},
-        {title: `${emot} ${pmenus} 𝙾𝚆𝙽𝙴𝚁`, rowId: ".? owner", description: "Owner Only!"},{
+        {title: `${pmenus} 𝙸𝙽𝚃𝙴𝚁𝙽𝙴𝚃`, rowId: ".? internet", description: "Cari sesuatu diBOT"},
+        {title: `${pmenus} 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁𝚂`, rowId: ".? downloader", description: "Download sesuatu diBOT"},
+        {title: `${pmenus} 𝚂𝚃𝙸𝙺𝙴𝚁𝚂`, rowId: ".? stiker", description: "Buat Sticker diBOT"},
+        {title: `${pmenus} 𝙽𝚄𝙻𝙸𝚂`, rowId: ".? nulis", description: "Nulis kok males kak?"},
+        {title: `${pmenus} 𝙿𝚁𝙴𝚂𝙴𝚃 𝙰𝙻𝙸𝙶𝙷𝚃 𝙼𝙾𝚃𝙸𝙾𝙽/APK`, rowId: ".presetmenu", description: "Gunakan Preset Bot buat Alight Montion Mu"},                               
+        {title: `${pmenus} 𝙰𝚄𝙳𝙸𝙾`, rowId: ".? audio", description: "Ubah Audio dengan Filter"},
+        {title: `${pmenus} 𝚜𝚘𝚞𝚗𝚍 𝚡 𝚖𝚊𝚗𝚐𝚔𝚊𝚗𝚎 𝚖𝚎𝚗𝚞`, rowId: ".soundmenu", description: "Kumpulan 99+ Sound"},
+        {title: `${pmenus} 𝙶𝚁𝙾𝚄𝙿`, rowId: ".? group", description: "Only Groups"},
+        {title: ` ${pmenus} 𝙰𝙳𝙼𝙸𝙽`, rowId: ".? admin", description: "Only Admin Group"},
+        {title: ` ${pmenus} 𝚃𝙾𝙾𝙻𝚂`, rowId: ".? tools", description: "Mungkin tools ini bisa membantu?"},       
+        {title: ` ${pmenus} 𝙸𝙽𝙵𝙾`, rowId: ".? info", description: "Info info BOT"},
+        {title: ` ${pmenus} 𝙾𝚆𝙽𝙴𝚁`, rowId: ".? owner", description: "Owner Only!"},{
         title: `${htki} 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 ${htka}`,
         rows: [
             {title: `🔖 ${pmenus} SEWA`, rowId: ".sewa", description: "Menampilkan list harga sewa BOT"},
@@ -324,7 +324,7 @@ const listMessage = {
   footer: `📮 *Note:* ʲⁱᵏᵃ ᵐᵉⁿᵉᵐᵘᵏᵃⁿ ᵇᵘᵍ, ᵉʳʳᵒʳ ᵃᵗᵃᵘ ᵏᵉˢᵘˡⁱᵗᵃⁿ ᵈᵃˡᵃᵐ ᵖᵉⁿᵍᵍᵘⁿᵃᵃⁿ ˢⁱˡᵃʰᵏᵃⁿ ˡᵃᵖᵒʳᵏᵃⁿ/ᵗᵃⁿʸᵃᵏᵃⁿ ᵏᵉᵖᵃᵈᵃ ᵒʷⁿᵉʳ•\n\nᴍᴀᴅᴇ ᴡɪᴛʜ ʙʏ ${nameown}\n\n${powered}`,
   mentions: await conn.parseMention(tek),
   title: ``,
-  buttonText: `️ List Menu', 
+  buttonText: `️ List Menu `, 
   sections
 }
   if (teks == '404') {
