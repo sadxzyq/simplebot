@@ -1,53 +1,25 @@
-let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
-	const sections = [
-   {
-	title: `${htki} OPTIONS ${htka}`,
-	rows: [
-	    {title: "⦅✨⦆ ✦ Welcome", rowId: `${usedPrefix + command} welcome`},
-	    {title: "⦅🚫⦆ ✦ Delete", rowId: `${usedPrefix + command} delete`},
-	    {title: "⦅🌏⦆ ✦ Public", rowId: `${usedPrefix + command} public`},
-	{title: "️⦅🗣️⦆ ✦ Simi", rowId: `${usedPrefix + command} simi`},
-	{title: "⦅🔞⦆ ✦ Nsfw", rowId: `${usedPrefix + command} nsfw`},
-	{title: "⦅🌟⦆ ✦ PremNsfwChat", rowId: `${usedPrefix + command} premnsfwchat`},
-	{title: "⦅🔗⦆ ✦ Antilinkgc", rowId: `${usedPrefix + command} antilinkgc`},
-	{title: "⦅🔗⦆ ✦ Antilinktik", rowId: `${usedPrefix + command} antilinktik`},
-	{title: "⦅🔗⦆ ✦ Antilinktel", rowId: `${usedPrefix + command} antilinktel`},
-	{title: "⦅🔗⦆ ✦ Antilinkyt", rowId: `${usedPrefix + command} antilinkyt`},
-	{title: "⦅🔗⦆ ✦ Antilinkig", rowId: `${usedPrefix + command} antilinkig`},
-	{title: "⦅🔗⦆ ✦ Antilinkfb", rowId: `${usedPrefix + command} antilinkfb`},
-	{title: "⦅🔗⦆ ✦ Antilinkhttp", rowId: `${usedPrefix + command} antilinkhttp`},
-	{title: "️⦅🖼️⦆ ✦ Antisticker", rowId: `${usedPrefix + command} antisticker`},
-	{title: "⦅⛔⦆ ✦ Antidelete", rowId: `${usedPrefix + command} antidelete`},
-	{title: "⦅📛⦆ ✦ Antitoxic", rowId: `${usedPrefix + command} antitoxic`},
-    {title: "⦅📛⦆ ✦ Antivirtex", rowId: `${usedPrefix + command} antivirtex`},
-	{title: "⦅⬆️⦆ ✦ Autolevelup", rowId: `${usedPrefix + command} autolevelup`},
-	{title: "⦅🎶⦆ ✦ Autodelvn", rowId: `${usedPrefix + command} autodelvn`},
-	{title: "⦅🎨⦆ ✦ Autosticker", rowId: `${usedPrefix + command} autosticker`},
-	{title: "⦅🔎⦆ ✦ Detect", rowId: `${usedPrefix + command} detect`},
-	{title: "⦅🔕⦆ ✦ Anti spam", rowId: `${usedPrefix + command} antispam`},
-	{title: "⦅📂⦆ ✦ Document", rowId: `${usedPrefix + command} document`},
-	{title: "⦅👤⦆ ✦ WhiteListMyContact", rowId: `${usedPrefix + command} whitelistmycontact`},
-	{title: "⦅❗⦆ ✦ Restrict", rowId: `${usedPrefix + command} restrict`},
-	{title: "⦅😴⦆ ✦ Nyimak", rowId: `${usedPrefix + command} nyimak`},
-	{title: "⦅🔇⦆ ✦ Anti Call", rowId: `${usedPrefix + command} anticall`},
-	{title: "⦅☑️⦆ ✦ Autoread", rowId: `${usedPrefix + command} autoread`},
-	{title: "⦅💬⦆ ✦ PcOnly", rowId: `${usedPrefix + command} pconly`},
-	{title: "⦅🏢⦆ ✦ GcOnly", rowId: `${usedPrefix + command} gconly`},
-	{title: "⦅📷⦆ ✦ SwOnly", rowId: `${usedPrefix + command} swonly`},
-	]
-    },
-]
- 
-const listMessage = {
-  text: ' ',
-  footer: botdate,
-  title: `*${htki} OPTIONS ${htka}*`,
-  buttonText: "Click Here!",
-  sections
-}
-
+import db from '../lib/database.js' 
+  
+ // TODO: 
+ // const data = { 
+ //   user: [{ 
+ //     name: 'autolevelup', 
+ //     isEnable: true 
+ //   }], 
+ //   chat: [{ 
+ //     name: 'welcome', 
+ //     isEnable: true, 
+ //     rules: [{ 
+ //     }] 
+ //   }] 
+ // } 
+ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
+ const { isBanned, welcome, detect, sWelcome, sBye, anticall, nsfw, premnsfw, autoresponder, viewonce, autoread, restrict, useDocument, stiker, autolevelup, whitelistmycontacts, self, premnsfwchat, document, autosticker, getmsg, nyimak, swonly, pconly, gconly, sPromote, sDemote, antiLinkTik, antiLinkTel, antiLinkIg, antiLinkHttp, antiLinkYt, antiLinkFb, antiVirtex, antiToxic, antiLinkGc, antiStiker, antiSpam, del } = global.db.data.chats[m.chat]
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
   let chat = global.db.data.chats[m.chat]
+  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let name = await conn.getName(who)
+  let ucp = `Hallo ${name} 👋`
   let user = global.db.data.users[m.sender]
   let bot = global.db.data.settings[conn.user.jid] || {}
   let type = (args[0] || '').toLowerCase()
@@ -114,25 +86,6 @@ const listMessage = {
           throw false
         }
       }
-  /*    chat.antiLinkBitly = isEnable
-     break
-     case 'antiLinkWa':
-     if (m.isGroup) {
-      if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiLinkWa = isEnable
-     break
-     case 'antiLinkBitly':
-     if (m.isGroup) {
-      if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      */
       chat.antiVirtex = isEnable
       break
     case 'antispam':
@@ -261,12 +214,12 @@ const listMessage = {
       }
       chat.antiSticker = isEnable
       break
-      case 'simi':
+      case 'autoresponder':
         if (!isROwner) {
           global.dfail('rowner', m, conn)
           throw false
         }
-      chat.simi = isEnable
+      chat.autoresponder = isEnable
       break
       case 'nsfw':
         if (m.isGroup) {
@@ -374,21 +327,68 @@ const listMessage = {
       }
       global.opts['swonly'] = isEnable
       break
-        default:
-      if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage)
-      throw false
-  }
-  conn.sendButton(m.chat, `
-╭───═[ STATUS ]═─── 
-│⩽⩾ Type: *${type}*
-│⩽⩾ Status: Succes!
-│⩽⩾ Options: *${isEnable ? 'On' : 'Off'}*
-│⩽⩾ For: *${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}*
-┗─────────────···
-`,wm, null, [[`${isEnable ? ' Off' : '️ On'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['Owner', '.owner']],m)
-}
-handler.help = ['en', 'dis'].map(v => v + 'able <option>')
-handler.tags = ['group', 'owner']
-handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
+    default:    
+       if (!/[01]/.test(command)) return conn.sendButton(m.chat, `*〔 llı OPTIONS ıll 〕*`, `
+    
+    
+꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦
+   
+banned ${isBanned ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+welcome ${welcome ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+detect ${detect ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antidelete ${del ? '❪𝗢𝗙𝗙❫' : '❪𝗢𝗡❫'} 
+antivirtex ${antiVirtex ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antistiker ${antiStiker ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antispam ${antiSpam ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antitoxic ${antiToxic ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antilinkgc ${antiLinkGc ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antilinktik ${antiLinkTik ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antilinktel ${antiLinkTel ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antilinkyt ${antiLinkYt ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antilinkhttp ${antiLinkHttp ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antilinkig ${antiLinkIg ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+antilinkfb ${antiLinkFb ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+anticall ${anticall ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+autosticker ${stiker ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'}  
+autolevelup ${autolevelup ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} ⮕  
+autoread ${autoread ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'}  
+document ${useDocument ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'}  
+detect ${detect ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+autoresponder ${autoresponder ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+nsfw ${nsfw ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+getmsg ${getmsg ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'}  
+premnsfw ${premnsfw ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} 
+gconly ${gconly ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'}⮕ 
+nyimak ${nyimak ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'} ⮕ 
+pconly ${pconly ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'}⮕ 
+public ${self ? '❪𝗢𝗙𝗙❫' : '❪𝗢𝗡❫'}⮕ 
+restrict ${restrict ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'}⮕  
+swonly ${swonly ? '❪𝗢𝗡❫' : '❪𝗢𝗙𝗙❫'}⮕  
+  
+▶︎ ━━━━━━━•──────────── 
+      ⇆ㅤ◁ㅤ ❚❚ㅤ ▷ㅤ↻
 
-export default handler
+📜 *TUTORIAL*
+ 
+𝍤 ON: ${usedPrefix}on welcome ❫
+
+𝍤 OFF: ${usedPrefix}off welcome ❫
+
+📮Pastikan Huruf kecil semua!
+ `.trim(), `./media/on-off.jpg`, [ 
+ [`SEWA BOT`, `${usedPrefix}sewa`] 
+ ], m, {asLocation:true}) 
+       throw false 
+   } 
+     conn.sendButton(m.chat, ucp, `*${htki} STATUS ${htka}* 
+ 📔  *Type:*   ${type}  
+ 🗞️   *Status:*   Succes ✅ 
+ 💻️   *Options:*   ${isEnable ? 'ON' : 'OFF'} 
+ 🗳️   ${isAll ? 'Bot Only' : isUser ? '' : 'Chat Only'}\n\n${botdate}
+ `, `${flaaa2 + 'Options'}`, [['MENU', '.menuv3'],['OKE', 'Ok']],m)
+ } 
+ handler.help = ['settings'] 
+ handler.tags = ['Bot'] 
+ handler.command = /^((en|dis)able|setting|settings|(tru|fals)e|(turn)?o(n|ff)|[01])$/i 
+  
+ export default handler

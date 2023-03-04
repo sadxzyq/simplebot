@@ -1,9 +1,10 @@
-const isLinkGc = /chat.whatsapp.com/i 
+const isLinkGc = /chat.whatsapp.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i
 const isLinkTik = /tiktok.com/i // tambahin sendiri
 const isLinkYt = /youtube.com|youtu.be/i // tambahin sendiri
 const isLinkTel = /t.me/i // tambahin sendiri
 const isLinkFb = /facebook.com|fb.me/i // tambahin sendiri
 const isLinkIg = /instagram.com/i // tambahin sendi
+const isLinkWa = /wa.me/i // tambahin sendi
 const isLinkHttp = /http|https/i // tambahin sendiri
 
 export async function before(m, { conn, args, usedPrefix, command, isAdmin, isBotAdmin }) {
@@ -39,6 +40,13 @@ export async function before(m, { conn, args, usedPrefix, command, isAdmin, isBo
     
     if (chat.antiLinkTik && isAntiLinkTik) {
         await conn.sendButton(m.chat, `Terdeteksi *${name}* Telah Mengirim Link Tiktok!! ${isBotAdmin ? '' : '\n\n_Jadikan Bot Atmin Terlebih dahulu_'}`, author, ['Owner', '/owner'], m)
+        if (isBotAdmin && bot.restrict) {
+        return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: hapus }})
+    //    return conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+        } else if (!bot.restrict) return m.reply('*Anda Atmin Anda Aman :v!*')
+    }
+    if (chat.antiLinkWa && isAntiLinkWa) {
+        await conn.sendButton(m.chat, `Terdeteksi *${name}* Telah Mengirim Link Nomor WhatsApp!! ${isBotAdmin ? '' : '\n\n_Jadikan Bot Atmin Terlebih dahulu_'}`, author, ['Owner', '/owner'], m)
         if (isBotAdmin && bot.restrict) {
         return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: hapus }})
     //    return conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')

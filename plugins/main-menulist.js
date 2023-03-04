@@ -276,17 +276,14 @@ const sections = [
         {title: ` ${pmenus} 𝙰𝙳𝙼𝙸𝙽`, rowId: ".? admin", description: "Only Admin Group"},
         {title: ` ${pmenus} 𝚃𝙾𝙾𝙻𝚂`, rowId: ".? tools", description: "Mungkin tools ini bisa membantu?"},       
         {title: ` ${pmenus} 𝙸𝙽𝙵𝙾`, rowId: ".? info", description: "Info info BOT"},
-        {title: ` ${pmenus} 𝙾𝚆𝙽𝙴𝚁`, rowId: ".? owner", description: "Owner Only!"},{
+        {title: ` ${pmenus} 𝙾𝚆𝙽𝙴𝚁`, rowId: ".? owner", description: "Owner Only!"}} ],{
         title: `${htki} 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 ${htka}`,
         rows: [
             {title: `🔖 ${pmenus} SEWA`, rowId: ".sewa", description: "Menampilkan list harga sewa BOT"},
             {title: `🌟 ${pmenus} BUY PREMIUM`, rowId: ".premium", description: "Menampilkan list harga premium"},
             {title: `💹 ${pmenus} DONASI`, rowId: ".donasi", description: 'Support BOT agar lebih fast respon'},
         ]
-        },
-        ]
-        },
-]
+        },]
 let tek = `✧────···[ Dashboard ]···────✧
 ┌━━━━━━━━━━━━━━━━┈─✧
 │ 「 𝗛𝗮𝗶 𝗞𝗮👋 」 

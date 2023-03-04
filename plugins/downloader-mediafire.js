@@ -1,21 +1,17 @@
-import { mediafiredl } from '@bochilteam/scraper'
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`
-    let res = await mediafiredl(args[0])
-    let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
-    let caption = `
-*💌 Name:* ${filename}
-*📊 Size:* ${filesizeH}
-*🗂️ Extension:* ${ext}
-*📨 Uploaded:* ${aploud}
-`.trim()
-    m.reply(caption)
-    await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: ext, asDocument: true })
+import fetch from 'node-fetch'
+let handler = async (m, { conn, args }) => {
+	if (!args[0]) throw 'Input URL' 
+	if (!/https?:\/\/(www\.)?mediafire\.com/.test(args[0])) throw 'Invalid URL' 
+	let res = await fetch(`https://saipulanuar.ga/api/download/mediafire?url=${args[0]}`)
+	let data = await res.json()
+let json = data.result
+let don = `Nama File : ${json.title}\nSize : ${json.filesize}\nMimeType : ${json.mime}\nUrl : ${json.link}\nSedang Di Proses...`
+m.reply(don)
+	conn.sendFile(m.chat, json.link, json.title, '', m, null, { mimetype: json.mime, asDocument: true })
 }
-handler.help = ['mediafire'].map(v => v + ' <url>')
+handler.help = ['mediafire']
 handler.tags = ['downloader']
-handler.command = /^(mediafire|mf)$/i
-
+handler.command = /^(mediafire)$/i
 handler.limit = true
 
 export default handler

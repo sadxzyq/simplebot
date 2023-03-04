@@ -37,7 +37,7 @@ ${pickRandom(global.islam)}
         conn.sendMessage(m.chat, message)
 }
 handler.help = ['q-islam']
-handler.tags = ['quotes']
+handler.tags = ['islam']
 handler.command = /^(q-islam)$/i
 handler.owner = false
 handler.mods = false

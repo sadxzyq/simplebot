@@ -13,7 +13,7 @@ export async function before(m, { conn, args, usedPrefix, command, isAdmin, isBo
     let bang = m.key.id
     
     if (chat.antiToxic && isAntiToxic) {
-        await conn.sendButton(m.chat, `*Terdeteksi ${name} Telah Mengirim Kata-Kata Aneh!*\n\n_“Barang siapa yang beriman kepada Allah dan Hari Akhir maka hendaklah dia berkata baik atau diam” (HR. al-Bukhari dan Muslim)._ ${isBotAdmin ? '' : '\n\n_Bot bukan atmin_'}`, author, ['Owner', '/owner kontak', 'Menu', '/menu'], m)
+        await conn.sendButton(m.chat, `*Terdeteksi ${name} Telah Mengirim Kata-Kata Aneh!*\n\n_“Barang siapa yang beriman kepada Allah dan Hari Akhir maka hendaklah dia berkata baik atau diam” (HR. al-Bukhari dan Muslim)._ ${isBotAdmin ? '' : '\n\n_Bot bukan atmin_'}`, author, ['Owner', '/owner kontak'], m)
         if (isBotAdmin && bot.restrict) {
             // await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
  /*   global.db.data.users[m.sender].warn += 1
