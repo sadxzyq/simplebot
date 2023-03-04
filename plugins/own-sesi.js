@@ -1,7 +1,7 @@
 import fs from 'fs'
 let handler = async (m, { conn, text }) => {
     m.reply('Tunggu Sebentar, Sedang mengambil file sesi mu')
-    let sesi = await fs.readFileSync('./DarkBot.data.json')
+    let sesi = await fs.readFileSync('./DarkxBot.data.json')
     return await conn.sendMessage(m.chat, { document: sesi, mimetype: 'application/json', fileName: 'DarkxBot.data.json' }, { quoted: m })
 }
 handler.help = ['getsessi']
