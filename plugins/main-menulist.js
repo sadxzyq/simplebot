@@ -15,13 +15,11 @@ const defaultMenu = {
 ${emot}│☂︎ *Tag:* %tag
 ${emot}│☂︎ *Premium:* %prems
 ${emot}│☂︎ *Limit:* %limit
-${emot}│☂︎ *Level:* %level [ %xp4levelup Xp For Levelup]
-${emot}│☂︎ *Xp:* %exp / %maxexp
-┬│☂︎ *Total Xp:* %totalexp
+┬│☂︎ *Level:* %level [ %xp4levelup Xp For Levelup]
 │╰────────────────···
 ┠─────═[ 𝚃𝙾𝙳𝙰𝚈 ]═─────⋆
 │╭────────────────···
-┴│    *${ucapan()} %name!*
+┴│  *${ucapan()} %name!*
 ${emot}│☂︎ *Tanggal:* %week %weton
 ${emot}│☂︎ *Date:* %date
 ${emot}│☂︎ *Tanggal Islam:* %dateIslamic
@@ -32,21 +30,18 @@ ${emot}│☂︎ *Tanggal Islam:* %dateIslamic
 ┴│☂︎ *Nama Bot:* sɪᴍᴘʟᴇ ʙᴏᴛ
 ${emot}│☂︎ *Mode:* %mode
 ${emot}│☂︎ *Prefix:* [ *%_p* ]
-${emot}│☂︎ *Baileys:* Multi Device
-${emot}│☂︎ *Platform:* %platform
-${emot}│☂︎ *Type:* Node.Js
 ${emot}│☂︎ *Uptime:* %muptime
 ┬│☂︎ *Database:* %rtotalreg dari %totalreg
 │╰────────────────···
 ╰──────────═┅═────────···
 
-「⛱」──「 *INFO CMD* 」───⬣
+「⛁」──「 *INFO CMD* 」───⬣
 │ *Ⓟ* = Premium
 │ *Ⓛ* = Limit
 「𝕏」────────────⬣
 %readmore
 `.trimStart(),
-  header: '「⛱」──「 %category 」───⬣',
+  header: '「⛂」──「 %category 」───⬣',
   body: `%c2 %cmd %isPremium %islimit`,
   footer: '「𝕏」───────────⬣\n',
   after: `%c4\n${powered}`,
@@ -70,6 +65,7 @@ let arrayMenu = ['all', 'anime', 'update', 'maker', 'berita', 'edukasi', 'news',
   'kerang': 'Kerang Ajaib',
   'quotes': 'Quotes',
   'fun': 'Fun',
+  'photo': 'Photo',
   'group': 'Group',
   'premium': 'Premium',
   'internet': 'Internet',
@@ -141,6 +137,9 @@ if (teks == 'menbalas') tags = {
   }
   if (teks == 'fun') tags = {
     'fun': 'Fun'
+  }
+  if (teks == 'photo') tags = {
+    'photo': 'Photo'
   }
   if (teks == 'quran') tags = {
     'quran': 'Al-Qur\'an',
@@ -259,7 +258,8 @@ const sections = [
         {title: `${pmenus} 𝚁𝙿𝙶`, rowId: ".? rpg", description: "Game Epic Rpg!"},
         {title: `${pmenus} 𝙴𝚇𝙿`, rowId: ".? xp", description: "Ayo tingkatkan pangkat mu!"},
         {title: `${pmenus} 𝙶𝙰𝙼𝙴`, rowId: ".? game", description: "Gamenya seru seru lho >-<"},
-        {title: `${pmenus} 𝙵𝚄𝙽`, rowId: ".? fun", description: "Fitur yang aman untuk keluarga"},
+        {title: `${pmenus} 𝙵𝚄𝙽`, rowId: ".? fun", description: "Fitur hiburan semata"},
+        {title: `${pmenus} 𝙿𝙷𝙾𝚃𝙾`, rowId: ".? photo", description: "Baguskan foto dengan efek"},
         {title: `${pmenus} 𝙺𝙴𝚁𝙰𝙽𝙶`, rowId: ".? kerangajaib", description: "Tanyakan pada ketua club"},
         {title: `${pmenus} 𝚀𝚄𝙾𝚃𝙴𝚂`, rowId: ".? quotes", description: "Random Inspirasi"},         
         {title: ` ${pmenus} 𝙿𝚁𝙴𝙼𝙸𝚄𝙼`, rowId: ".? premium", description: "Only premium Users"},
@@ -293,18 +293,13 @@ let tek = `✧────···[ Dashboard ]···────✧
 └┬ ▸ 「 ${usrs.registered ? usrs.name : conn.getName(m.sender)} 」 
 ┌┤ ▸ ${ucapan()}
 │└━━━━━━━━━━━━━━━━┈─⋆
-│▸ 『𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝚄𝚂𝙸𝙽𝙶 𝚊 𝙱𝙾𝚃 𝙼𝙴』
+│  『𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝚄𝚂𝙸𝙽𝙶 𝚊 𝙱𝙾𝚃 𝙼𝙴』
 └┬━━━━━━━━━━━━━━━━┈─⋆
 ┌┤▸   「 *U s e r  I n f o * 」
 │└━━━━━━━━━━━━━━━━┈─⋆
 │ ▸ 𝗡𝗮𝗺𝗲 : ${usrs.registered ? usrs.name : conn.getName(m.sender)}
-│ ▸ 𝗧𝗮𝗴𝘀 : @${m.sender.split`@`[0]}
 │ ▸ 𝗦𝘁𝗮𝘁𝘂𝘀 : ${m.sender.split`@`[0] == nomorown ? 'Developer' : (usrs.premiumTime >= 1 ? 'Premium User' : 'Free User')}
-│ ▸ 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 : ${usrs.premiumTime > 1 ? 'Yes': 'No'}
 │ ▸ 𝗟𝗶𝗺𝗶𝘁 : ${usrs.limit}
-│ ▸ 𝗟𝗲𝘃𝗲𝗹 : ${usrs.level}
-│ ▸ 𝗥𝗼𝗹𝗲 : ${usrs.role}${usrs.premiumTime > 1 ? `
-${clockStringP(usrs.premiumTime - new Date())}` : ''}
 └┬━━━━━━━━━━━━━━━━┈─⋆
 ┌┤▸ 「 *S t a t u s  I n f o * 」 
 │└━━━━━━━━━━━━━━━━┈─⋆
@@ -312,13 +307,9 @@ ${clockStringP(usrs.premiumTime - new Date())}` : ''}
 │ ▸ 𝗛𝗮𝗿𝗶 : ${week} ${weton}
 │ ▸ 𝗧𝗮𝗻𝗴𝗴𝗮𝗹 : ${date} 
 │ ▸ 𝗧𝗮𝗻𝗴𝗴𝗮𝗹 𝗜𝘀𝗹𝗮𝗺 : ${dateIslamic}
-│ ▸ 𝗧𝗶𝗺𝗲 : ${time}
 │ ▸ 𝗨𝗽𝘁𝗶𝗺𝗲 : ${mpt}
-└┬━━━━━━━━━━━━━━━━┈─⋆
-  │ ▸ 𝗦𝘂𝗺𝗯𝗲𝗿 : Github Mr.Dark (sadxzyq)
-  │ ▸ 𝗔𝘂𝘁𝗵𝗼𝗿 : ${nameown}
-  │ ▸ 𝗢𝘄𝗻𝗲𝗿 : ${nameown}
-  └━━━━━━━━━━━━━━━━┈─◂`
+└━━━━━━━━━━━━━━━━┈─⋆
+ `
 const listMessage = {
   text: tek,
   footer: `📮 *Note:* ʲⁱᵏᵃ ᵐᵉⁿᵉᵐᵘᵏᵃⁿ ᵇᵘᵍ, ᵉʳʳᵒʳ ᵃᵗᵃᵘ ᵏᵉˢᵘˡⁱᵗᵃⁿ ᵈᵃˡᵃᵐ ᵖᵉⁿᵍᵍᵘⁿᵃᵃⁿ ˢⁱˡᵃʰᵏᵃⁿ ˡᵃᵖᵒʳᵏᵃⁿ/ᵗᵃⁿʸᵃᵏᵃⁿ ᵏᵉᵖᵃᵈᵃ ᵒʷⁿᵉʳ•\n\nᴍᴀᴅᴇ ᴡɪᴛʜ ʙʏ ${nameown}\n\n${powered}`,
