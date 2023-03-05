@@ -38,6 +38,7 @@ const {
 const { CONNECTING } = ws
 const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
+
 protoType()
 serialize()
 
@@ -92,7 +93,7 @@ const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
   // logger: pino({ level: 'trace' })
-  logger: pino({ level: 'silent' })
+  // logger: pino({ level: 'silent' })
 }
 
 global.conn = makeWASocket(connectionOptions)
@@ -164,8 +165,8 @@ global.reloadHandler = async function (restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate)
   }
 
-  conn.welcome = 'W E L C O M E @user 👋'
-  conn.bye = 'G O O D B Y E @user 👋'
+  conn.welcome = '✧━━━━━━[ *WELCOME* ]━━━━━━✧\n\n┏––––––━━━━━━━━•\n│⫹⫺ @subject\n┣━━━━━━━━┅┅┅\n│( 👋 Hallo @user)\n├[ *INTRO* ]—\n│ *Nama:* \n│ *Umur:* \n│ *Gender:*\n┗––––––━━┅┅┅\n\n––––––┅┅ *DESCRIPTION* ┅┅––––––\n@desc'
+  conn.bye = '✧━━━━━━[ *GOOD BYE* ]━━━━━━✧\nSayonara *@user* 👋( ╹▽╹ )'
   conn.spromote = '@user sekarang admin!'
   conn.sdemote = '@user sekarang bukan admin!'
   conn.sDesc = 'Deskripsi telah diubah ke \n@desc'
@@ -277,5 +278,5 @@ async function _quickTest() {
 }
 
 _quickTest()
-  .then(() => conn.logger.info('☑️ Quick Test Done'))
+  .then(() => conn.logger.info('☑️ Mencoba analisis source code'))
   .catch(console.error)
